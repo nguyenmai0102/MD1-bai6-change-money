@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <input id="dauVao" placeholder="moi nhap so tien vao day">;
+<br>
+<b> From Currency</b> <br>
+<select  id="select1" onchange="showMessage()">;
+    <option value="vnd">VND</option>;
+    <option value="usd" >USD</option>;
+    <br>
+</select>
+<br>
+<b>to Currency</b> <br>
+<select  id="select2" onchange="showMessage()">;
+   <option value="vnd" >VND</option>;
+   <option value="usd" >USD</option>;
+</select>   <br>
+<h1 id="dkq"></h1>
+<button  onclick="showMessage()">chuyển đổi</button>
+
+ <script>
+     function showMessage() {
+        let money = document.getElementById('dauVao').value;
+        let tien = document.getElementById('select1').value;
+        let nhieuTien = document.getElementById('select2').value
+         let ketQua =0
+        if(tien === nhieuTien ){
+            document.getElementById('dkq').innerHTML="<h2  style='color: wheat'>chon menh gia khac nhau</h2>"
+            return
+        }
+        if(tien=== "vnd"){
+            if (nhieuTien === "usd"){ketQua= money/24000}
+        }
+        if(tien==="usd"){
+            if(nhieuTien=== "vnd"){ketQua= money*24000}
+        }
+       document.getElementById("dkq").innerHTML=ketQua+nhieuTien
+       }
+
+ </script>
+
+
+
+</body>
+</html>
